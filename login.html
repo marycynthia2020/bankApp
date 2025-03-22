@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/style.css" />
+    <title>Login to Your App</title>
+  </head>
+  <body>
+    <body class="w-screen h-screen grid place-items-center">
+      <div
+        class="w-full p-4 md:w-2/3 2xl:w-2/6 rounded-lg md:shadow-2xl 2xl:border-2 2xl:border-blue-600"
+      >
+        <h1 class="text-3xl md:text-4xl text-center mb-10" id="heading">
+          Login
+        </h1>
+
+        <form
+        >
+        <div class="flex flex-col gap-2 mb-6">
+          <label for="email" class="text-xl pl-2"
+            ><span class="text-red-500 mr-1">*</span>Email:
+          </label>
+          <input
+            type="email"
+            name=""
+            id="email"
+            placeholder="enter your registered email"
+            class="p-2 border-2 border-gray-400 rounded-md"
+            onkeydown="clearField('email-error')"
+          />
+          <span
+            class="ml-2 text-sm italic text-red-500"
+            id="email-error"
+          ></span>
+        </div>
+          <div class="flex flex-col gap-2 mb-6">
+            <label for="Fname" class="text-xl pl-2"
+              ><span class="text-red-500 mr-1">*</span>Password
+            </label>
+
+            <input
+              type="password"
+              name=""
+              id="password"
+              class="p-2 border-2 border-gray-400 rounded-md"
+              onkeydown="clearField('password-error')"
+            />
+            <span
+              class="ml-2 text-sm italic text-red-500"
+              id="password-error"
+            ></span>
+          </div>
+
+          <button
+            type="submit"
+            id="login"
+            class="block m-auto bg-blue-600 rounded-md text-white text-2xl py-4 px-12 w-full"
+          >
+            Login
+          </button>
+          <div class="mt-5 mx-auto">
+            Dont't have an account yet? <span class="text-blue-600"><a  href="index.html">Sign up</a></span>
+            </div>
+        </form>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bcryptjs@v3.0.2/umd/index.js"></script>
+      <script src="/script/login.js"></script>
+    </body>
+  </body>
+</html>
