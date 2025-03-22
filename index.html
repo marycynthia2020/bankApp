@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/style.css" />
+    <title>Bank App</title>
+  </head>
+  <body class="w-screen h-screen grid place-items-center bg-gray-400">
+    <div
+      class="w-full p-4 md:w-2/3 2xl:w-2/6 rounded-lg md:shadow-2xl 2xl:border-2 2xl:border-blue-600"
+    >
+      <h1 class="text-3xl text-center mb-8" id="heading">
+        Happy to Have You Onboard      </h1>
+
+      <form
+      >
+        <div class="flex flex-col gap-2  mb-4">
+          <label for="Fname" class="text-xl pl-2"
+            ><span class="text-red-500 mr-1">*</span>First Name:
+          </label>
+
+          <input
+            type="text"
+            name=""
+            id="Fname"
+            placeholder="enter your first name"
+            class="p-2 border-2 border-gray-400 rounded-md "
+            onkeydown="clearField('Fname-error')"
+          />
+          <span
+            class="ml-2 text-sm italic text-red-500"
+            id="Fname-error"
+          ></span>
+        </div>
+
+        <div class="flex flex-col gap-2 r mb-4">
+          <label for="Lname" class="text-xl pl-2"
+            ><span class="text-red-500 mr-1">*</span>Last Name:
+          </label>
+          <input
+            type="text"
+            name=""
+            id="Lname"
+            placeholder="enter your last name"
+            class="p-2 border-2 border-gray-400 rounded-md"
+            onkeydown="clearField('Lname-error') "
+          />
+          <span
+            class="ml-2 text-sm italic text-red-500"
+            id="Lname-error"
+          ></span>
+        </div>
+        <div class="flex flex-col  gap-2 mb-4">
+          <label for="email" class="text-xl pl-2"
+            ><span class="text-red-500 mr-1">*</span>Email:
+          </label>
+          <input
+            type="email"
+            name=""
+            id="email"
+            placeholder="enter your email"
+            class="p-2 border-2 border-gray-400 rounded-md"
+            onkeydown="clearField('email-error')"
+          />
+          <span
+            class="ml-2 text-sm italic text-red-500"
+            id="email-error"
+          ></span>
+        </div>
+
+        <div class="flex flex-col gap-2  mb-6">
+          <label for="password" class="text-xl pl-2"
+            ><span class="text-red-500 mr-1">*</span>Password:
+          </label>
+          <input
+            type="password"
+            name=""
+            id="password"
+            class="p-2 border-2 border-gray-400 rounded-md"
+            onkeydown="clearField('password-error')"
+          />
+          <span
+            class="ml-2 text-sm italic text-red-500"
+            id="password-error"
+          ></span>
+        </div>
+
+        <div class="flex flex-col  gap-2  mb-4">
+          <label for="confirm-password" class="text-xl pl-2"
+            ><span class="text-red-500 mr-1">*</span>Confirm Password:
+          </label>
+          <input
+            type="password"
+            name=""
+            id="confirm-password"
+            class="p-2 border-2 border-gray-400 rounded-md"
+            onkeydown="clearField('confirm-password-error')"
+          />
+          <span
+            class="ml-2 text-sm italic text-red-500"
+            id="confirm-password-error"
+          ></span>
+        </div>
+        <p class="text-sm italic text-red-500 mb-4" id="error"></p>
+
+        <button
+          type="submit"
+          id="submit"
+          class="block m-auto bg-blue-600 rounded-md text-white text-2xl py-2 px-12 w-full mb-5"
+        >
+          Register
+        </button>
+        <div class="mt-5 mx-auto">
+          Already have an account? <span class="text-blue-600"><a  href="login.html">Login</a></span>
+          </div>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bcryptjs@v3.0.2/umd/index.js"></script>
+    <script src="/script/register.js"></script>
+  </body>
+</html>
