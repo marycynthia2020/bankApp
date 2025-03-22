@@ -7,10 +7,10 @@
     <title>Bank App</title>
 </head>
 <body class="w-screen bg-[#eaf8fe] grid place-items-center">
-    <div class=" w-full md:w-4/5 p-4 mt-10 lg:w-[80%] 2xl:w-[60%] bg-red-400 ">
+    <div class=" w-full md:w-4/5 p-4 mt-5 lg:w-[80%] 2xl:w-[60%]">
         <h1 class="text-3xl font-bold mb-10">Your Dashboard</h1>
         <div class=" grid sm:grid-cols-2 xl:grid-cols-3 gap-4 mb-10">
-            <div class=" one px-6 py-12 flex justify-between items-center bg-white rounded-md text-xl font-medium">
+            <div class=" one px-6 py-12 flex justify-between items-center bg-white rounded-md text-xl font-medium shadow-md">
                 <div>
                     <p>Total Deposit</p>
                     <p>$0</p>
@@ -18,7 +18,7 @@
                 <img src="/images/dollar1-svgrepo-com.svg" alt="dollar" width="60" height="60">
             </div>
 
-            <div class="two px-6 py-12 flex justify-between items-center bg-white rounded-md text-xl font-medium">
+            <div class="two px-6 py-12 flex justify-between items-center bg-white rounded-md text-xl font-medium shadow-md">
                 <div>
                     <p>Total Withdrawal</p>
                     <p>$0</p>
@@ -26,7 +26,7 @@
                 <img src="/images/money-withdraw-svgrepo-com.svg" alt="dollar" width="60" height="60">
             </div>
 
-            <div class="three px-6 py-12 flex justify-between items-center bg-white rounded-md text-xl font-medium">
+            <div class="three px-6 py-12 flex justify-between items-center bg-white rounded-md text-xl font-medium shadow-md">
                 <div>
                     <p>Total Balance</p>
                     <p>$0</p>
@@ -34,6 +34,21 @@
                 <img src="/images/money-bag-svgrepo-com.svg" alt="dollar" width="60" height="60">
             </div>
         </div>
+
+        <div class="grid sm:grid-cols-2 gap-8">
+            <div class="rounded-md p-4 flex flex-col gap-6 shadow-xl">
+                <h3 class="text-2xl font-medium">Deposit</h3>
+                <input type="number" class="p-3 rounded-md" placeholder="Deposit Amount">
+                <button class="bg-[#4177ae] p-3 text-xl rounded-md">Deposit</button>
+            </div>
+            <div class="rounded-md p-4 flex flex-col gap-6 shadow-xl">
+                <h3 class="text-2xl font-medium">Withdraw</h3>
+                <input type="number" class="p-3 rounded-md" placeholder="Withdraw Amount">
+                <button class="bg-[#4177ae] p-3 text-xl rounded-md">Withdraw</button>
+            </div>
+        </div>
+
+        
     </div>    
 </body>
 </html>
