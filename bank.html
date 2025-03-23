@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="/dist/style.css">
     <title>Bank App</title>
 </head>
-<body class="w-screen bg-[#eaf8fe] grid place-items-center">
-    <div class=" w-full md:w-4/5 p-4 mt-5 lg:w-[80%] 2xl:w-[60%]">
-        <h1 class="text-3xl font-bold mb-10">Your Dashboard</h1>
+<body class="w-screen lg:h-screen bg-[#eaf8fe] grid place-items-center overflow-x-hidden">
+    <div class=" w-full md:w-4/5 p-4 mt-5 lg:w-[80%] 2xl:w-[60%] lg:h-full">
+        <h1 class="text-3xl font-bold mb-10"></h1>
         <div class=" grid sm:grid-cols-2 xl:grid-cols-3 gap-4 mb-10">
             <div class=" one px-6 py-12 flex justify-between items-center bg-white rounded-md text-xl font-medium shadow-md">
                 <div>
                     <p>Total Deposit</p>
-                    <p>$0</p>
+                    <p id="total-deposit">$0</p>
                 </div>
                 <img src="/images/dollar1-svgrepo-com.svg" alt="dollar" width="60" height="60">
             </div>
@@ -21,34 +21,49 @@
             <div class="two px-6 py-12 flex justify-between items-center bg-white rounded-md text-xl font-medium shadow-md">
                 <div>
                     <p>Total Withdrawal</p>
-                    <p>$0</p>
+                    <p id="total-withdrawal">$0</p>
                 </div>
                 <img src="/images/money-withdraw-svgrepo-com.svg" alt="dollar" width="60" height="60">
             </div>
 
             <div class="three px-6 py-12 flex justify-between items-center bg-white rounded-md text-xl font-medium shadow-md">
                 <div>
-                    <p>Total Balance</p>
-                    <p>$0</p>
+                    <p >Total Balance</p>
+                    <p id="total-balance">$0</p>
                 </div>
                 <img src="/images/money-bag-svgrepo-com.svg" alt="dollar" width="60" height="60">
             </div>
         </div>
 
-        <div class="grid sm:grid-cols-2 gap-8">
+        <div class="grid sm:grid-cols-2 gap-8 mb-10">
             <div class="rounded-md p-4 flex flex-col gap-6 shadow-xl">
                 <h3 class="text-2xl font-medium">Deposit</h3>
-                <input type="number" class="p-3 rounded-md" placeholder="Deposit Amount">
-                <button class="bg-[#4177ae] p-3 text-xl rounded-md">Deposit</button>
+                <input type="number" class="p-3 rounded-md" placeholder="Deposit Amount" id="deposit-amount">
+                <button class="bg-[#4177ae] p-3 text-xl rounded-md" id="deposit">Deposit</button>
             </div>
             <div class="rounded-md p-4 flex flex-col gap-6 shadow-xl">
                 <h3 class="text-2xl font-medium">Withdraw</h3>
-                <input type="number" class="p-3 rounded-md" placeholder="Withdraw Amount">
-                <button class="bg-[#4177ae] p-3 text-xl rounded-md">Withdraw</button>
+                <input type="number" class="p-3 rounded-md" placeholder="Withdraw Amount" id="withdraw-amount">
+                <button class="bg-[#4177ae] p-3 text-xl rounded-md" id="withdraw">Withdraw</button>
             </div>
         </div>
 
+        <div id="transaction-lists" class=" p-4 lg:max-h-[40vh] lg:overflow-y-scroll shadow-xl ">
+            <h3 class="text-2xl font-bold mb-10">Transaction History</h3>
+            <!-- <div class="flex justify-between items-center text-xl mb-4">
+                <p>Dposit</p>
+                <p>5000</p>
+                <p>23/3/2024</p>
+            </div>
+            <div class="flex justify-between items-center text-xl mb-4">
+                <p>Dposit</p>
+                <p>5000</p>
+                <p>23/3/2024</p>
+            </div> -->
+        </div>
+
         
-    </div>    
+    </div>   
+    <script src="/script/bank.js"></script> 
 </body>
 </html>

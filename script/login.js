@@ -29,6 +29,7 @@ function login(e) {
     }
     if (user) {
       user.isLoggedIn = true
+      localStorage.setItem("users", JSON.stringify(users)) 
       localStorage.setItem("currentUser", JSON.stringify(user)) 
 
       window.location.href = "bank.html"
