@@ -37,7 +37,7 @@ function depositMoney() {
   user.totalBalance += depositAmount;
 
   let depositHistory = {
-    deposit: "deposit",
+    TransactionTYpe: "deposit",
     Amount: `$${depositAmount}`,
     timestamp: new Date().getTime(),
   };
@@ -66,7 +66,7 @@ function withdrawMoney() {
     user.totalBalance -= withdrawalAmount;
 
     const withdrawalHistory = {
-      withdraw: "withdraw",
+      TransactionTYpe: "withdraw",
       Amount: `$${withdrawalAmount}`,
       timestamp: new Date().getTime(),
     };
@@ -103,7 +103,8 @@ function transferMoney() {
     selectedUser.totalDeposit += transferAmount;
 
     receiverTransferHistory = {
-      Transfer: "From " + current.email,
+      TransactionTYpe: "transfer",
+      sender:current.email,
       Amount: `$${transferAmount}`,
       timestamp: new Date().getTime(),
     };
@@ -112,7 +113,8 @@ function transferMoney() {
     current.totalWithdrawal += transferAmount;
     current.totalBalance -= transferAmount;
     senderTransferHistory = {
-      Transfer: "To " + selectedUser.email,
+      TransactionTYpe: "transfer",
+      receiver:selectedUser.email,
       Amount: `$${transferAmount}`,
       timestamp: new Date().getTime(),
     };
@@ -131,30 +133,32 @@ function displayAmount(user) {
   totalBalance.textContent = `$${user.totalBalance}`;
 
   transactionHistory.innerHTML = "";
-  user.Transactions.forEach(transact => {
-    if (transact.deposit === "deposit") {
+  user.Transactions.forEach(transaction => {
+    if (transaction.TransactionTYpe === "deposit") {
       transactionHistory.innerHTML += `
        <div class="flex justify-between items-center text-xl mb-6">
-               <p>${transact.deposit}</p>
-               <p>${transact.Amount}</p>
-               <p>${formatsDate(transact.timestamp)}</p>
+               <p>You deposited</p>
+               <p>${transaction.Amount}</p>
+               <p>${formatsDate(transaction.timestamp)}</p>
            </div>
          `;
+         return
     }
-    if (transact.withdraw === "withdraw") {
+    if (transaction.TransactionTYpe === "withdraw") {
       transactionHistory.innerHTML += `
        <div class="flex justify-between items-center text-xl mb-6">
-               <p>${transact.withdraw}</p>
-               <p>${transact.Amount}</p>
-               <p>${formatsDate(transact.timestamp)}</p>
+               <p>You withdrew</p>
+               <p>${transaction.Amount}</p>
+               <p>${formatsDate(transaction.timestamp)}</p>
            </div>
          `;
+         return
     } else {
       transactionHistory.innerHTML += `
       <div class="flex justify-between items-center text-xl mb-6">
-              <p>${transact.Transfer}</p>
-              <p>${transact.Amount}</p>
-              <p>${formatsDate(transact.timestamp)}</p>
+              <p>${transaction.sender? `Transfer from ${transaction.sender}`: `transfer to ${transaction.receiver}`}</p>
+              <p>${transaction.Amount}</p>
+              <p>${formatsDate(transaction.timestamp)}</p>
           </div>
         `;
     }
