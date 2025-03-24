@@ -156,7 +156,7 @@ function displayAmount(user) {
     } else {
       transactionHistory.innerHTML += `
       <div class="flex justify-between items-center text-xl mb-6">
-              <p>${transaction.sender? `Transfer from ${transaction.sender}`: `transfer to ${transaction.receiver}`}</p>
+              <p>${transaction.sender? `Transfer <br> from ${transaction.sender}`: `transfer <br> to ${transaction.receiver}`}</p>
               <p>${transaction.Amount}</p>
               <p>${formatsDate(transaction.timestamp)}</p>
           </div>
